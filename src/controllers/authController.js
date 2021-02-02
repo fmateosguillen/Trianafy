@@ -20,7 +20,7 @@ const AuthController = {
                 email: usuarioCreado.email
             });
         }catch{
-            res.status(404).json({message: (err.name === 'MongoError' && err.code === 11000) ? 'Email o usuario en uso, intentelo de nuevo' : errorHandler.getErrorMessage(err)});
+            res.status(404).json({message: (err.name === 'MongoError' && err.code === 11000) ? 'Email already on use' : errorHandler.getErrorMessage(err)});
         }
     },
     login: (req, res, next) => {

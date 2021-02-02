@@ -28,7 +28,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/users', routes.user);
 app.use('/playlists',routes.playList)
 app.use('/songs', routes.song);
 app.use('/auth', routes.auth)

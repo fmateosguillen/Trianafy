@@ -4,7 +4,6 @@ import playListController from './playListController'
 import songController from './songController'
 
 export default {
-    userController,
     AuthController,
     songController,
     playListController

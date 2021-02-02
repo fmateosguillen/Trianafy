@@ -1,11 +1,17 @@
-import { Song, songRepository } from '../models/song';
-import mongoose from 'mongoose'
+import { Song } from '../models/song';
+import { songRepository } from '../repositories/songRepository';
+import mongoose from 'mongoose';
 
-export const songController = {
+const songController = {
 
     allSongs:async(req,res)=>{
         const data = await songRepository.findAll();
-        res.json(data);
+        if (Array.isArray(data) && data.length > 0) {
+            res.json(data);
+        } else{
+            res.sendStatus(404);
+        }
+        
     },
 
     addSong:async(req,res)=>{
